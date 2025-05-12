@@ -1,9 +1,13 @@
 // components/sections/Introduction.tsx
 
+import IntroductionBackGround from "../back/IntroductionBack"
+
 // Introductionコンポーネントは、ページのIntroduction部分を表示します。
 const Introduction = () => {
   return (
     <section id="introduction">
+      {/* <IntroductionBackGround /> */}
+      <div id="introduction-content">
       <div className="section-title-wrapper">
         <h2 className="section-title">自己紹介</h2>
         <h3>初めまして！yukiと申します。</h3>
@@ -16,11 +20,12 @@ const Introduction = () => {
       </p>
       <p>
         本や映画、ゲームなど、ストーリー性のある作品が大好きです。<br />
-        ほかにも占いやピアノ、お絵描きも楽しんでいます。<br />
+        ほかにも音楽や占い、ピアノやお絵描きも楽しんでいます。<br />
         空想や妄想が好きで、「ああなりたい」「こうだったらいいな」という想いが<br />
         たくさんあります。<br />
         その目標を少しずつ叶えるため、日々やるべきことに取り組んでいます。
       </p>
+      </div>
     </section>
   )
 }

@@ -1,6 +1,244 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+#introduction, #finally {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* padding: 10rem 0; */
+}
+
+#introduction-content, #finally-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: left;
+}
+
+#introduction-content p, #finally-content p {
+  margin : 0 auto 2rem auto;
+  width : 90%;
+}
+
+/* src/components/Background.css */
+.background {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 背景として */
+  /* position: fixed;           /* 背景を画面に固定 */
+  /* top: 0; */
+  /* left: 0; */
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* z-index: -1;               背景が後ろに */
+  /* pointer-events: none;  */ 
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-clip-path: inset(0);
+  clip-path: inset(0);
+}
+
+.background ::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#introduction-background, #activities-background {
+  height: 100vh;
+  z-index: -1; /* 背景として */
+}
+
+.bg-crescent-moon {
+  position: absolute;
+  width: 40vw;
+  max-width: 1000px;
+  opacity: 0.4;
+}
+
+.bg-crescent-moon.left {
+  bottom: -6vw;
+  left: -2vw;
+  transform: scaleX(-1);
+  pointer-events: none; /* 背景をクリックできなくする */
+}
+
+/* .bg-crescent-moon.right {
+  top: 0;
+  right: 0;
+} */
+
+
+
+
+.blog-card {
+  position: relative;
+  background: #F5EBDD;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px 16px 48px 16px;
+  margin: 24px auto;
+
+  width: 500px;
+  height: 200px;
+  border: #7C4B4B 4px solid;
+}
+
+.blog-card.right {
+  transform: translateX(20%); /* 右にずらす */
+}
+
+.blog-card.left {
+  transform: translateX(-20%); /* 左にずらす */
+}
+
+.blog-card-tab {
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: #F5EBDD;
+  padding: 4px 20px;
+  border-radius: 8px 8px 0 0;
+  color: #744e3f;
+}
+
+.blog-card-content {
+  display: flex;
+  gap: 16px;
+  margin : auto 0;
+}
+
+.blog-card-image img,
+.image-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  background: #ccc;
+  object-fit: cover;
+}
+
+.blog-card-text {
+  flex: 1;
+  color: #5c4a42;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.blog-card-button {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #7C4B4B;
+  color: #F5EBDD;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.3s;
+}
+
+.blog-card-button:hover {
+  background: #5c3b2e;
+}
+
+.gear-icon {
+  font-size: 16px;
+}
+
+
+.skill-container {
+  display: flex;
+  flex-wrap: wrap; /* 子要素を折り返す */
+  max-width: 1000px; /* 最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+  justify-content: center; /* 中央揃え */
+  gap: 16px; /* カード間のスペース */
+}
+
+.skill-container > * {
+  flex: 0 0 200px; /* 幅を固定 */
+  max-width: 200px; /* 最大幅も固定 */
+  box-sizing: border-box; /* パディングやボーダーを含めて計算 */
+}
+
+.skill-card {
+  position: relative;
+  background: #F5EBDD;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 48px 16px 24px 16px;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  margin: 16px;
+  border: #7C4B4B 4px solid;
+}
+
+.skill-card-tab {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  max-width: 160px;
+  text-align: center;
+  transform: translateX(-50%);
+  background: #F5EBDD;
+  padding: 0 8px;
+  border-radius: 8px 8px 0 0;
+  color: #5C4B4B;
+}
+
+.skill-card-image,
+.image-placeholder2 {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px auto;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+.skill-card-text {
+  font-size: 14px;
+  color: #5C4B4B;
+  line-height: 1.4;
+}
+
+/* カテゴリ全体のスタイル */
+.skill-category {
+  margin-bottom: 2rem; /* カテゴリ間の余白 */
+  text-align: center;
+}
+
+/* カテゴリタイトルのスタイル */
+.skill-category-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #7C4B4B;
+}
+
+/* スキルを横並びにするコンテナ */
+.skill-items-container {
+  display: flex;
+  flex-wrap: wrap; /* 子要素を折り返す */
+  justify-content: center; /* 中央揃え */
+  gap: 16px; /* カード間のスペース */
+}
+
+/* スキルカードのスタイル */
+.skill-items-container > * {
+  flex: 0 0 200px; /* 幅を固定 */
+  max-width: 200px; /* 最大幅も固定 */
+  box-sizing: border-box; /* パディングやボーダーを含めて計算 */
 }
