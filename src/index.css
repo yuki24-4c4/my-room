@@ -1,0 +1,163 @@
+/* 全ての要素に適用されるCSS */
+
+/* Kiwi　Maruフォントのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap');
+
+/* CSSリセット
+----------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* margin: 0 auto; */
+}
+/* -------------------------------------------------------- */
+
+/* タグごとの基本的なスタイルを設定
+----------------------------------------------------------- */
+:root {
+  font-family: 'Kiwi Maru';
+  line-height: 1.8;
+  font-weight: 400;
+  font-size: 18px;
+  color-scheme: light dark;
+  color: #5C4B4B;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  background-color: #F5EBDD;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  padding: 0; /* ← ここ大事！ */
+  margin: 0;
+}
+
+
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: block; /* flexは今回は不要 */
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+h1 {
+  font-size: 2.67rem;
+  line-height: 1.1;
+  color: #F5EBDD;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #7C4B4B;
+}
+
+h3 {
+  font-size: 1.33rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+/* -------------------------------------------------------- */
+
+
+/* セクションタイトルのスタイルを設定
+----------------------------------------------------------- */
+.section-title-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  /* flex: 0.2; */
+  width: 80px;
+  border-bottom: 3px solid #7C4B4B;
+}
+
+.section-title::before {
+  margin-right: 3rem;
+}
+
+.section-title::after {
+  margin-left: 3rem;
+}
+
+/* ----------------------------------------------------------- */
+
+/* スマホやタブレット向けの調整 */
+@media (max-width: 1200px) {
+  :root {
+    font-size: 16px;  /* 中程度の画面用にフォントサイズを調整 */
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;  /* 小さな画面用にフォントサイズを調整 */
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;  /* 非常に小さな画面用にフォントサイズを調整 */
+  }
+}
+
+section {
+  margin-bottom: 20vh;
+}
