@@ -1,6 +1,6 @@
 // components/sections/Introduction.tsx
 
-import BlogCard from './BlogCard';
+import BlogCard from '../card/ActivitiesCard';
 
 type BlogItem = {
   title: string;
@@ -12,27 +12,16 @@ type BlogItem = {
 
 const blogList: BlogItem[] = [
   {
-    title: 'ブログ',
+    title: 'yukiのへや',
     description:
-      '空想や創作を詰め込んだ、ちょっとだけ\n不思議な世界。\n小さな物語や言葉たちを、気ままに綴っています。',
+      'ポートフォリオサイトです。私のスキルや活動、これまでに作ったサービスを紹介しています。',
+
     link: '/blog',
-    linkTitle: 'ブログを読む',
+    linkTitle: 'サイトに行く',
   },
-  {
-    title: '日記',
-    description: '日々の気づきや記録をまとめています。',
-    link: '/diary',
-    linkTitle: '日記を読む',
-  },
-  {
-    title: '日記',
-    description: '日々の気づきや記録をまとめています。',
-    link: '/diary',
-    linkTitle: '日記を読む',
-  },
+  
 ];
 
-import ActivitiesBackGround from "../back/ActivitiesBackground"
 // Activitiesコンポーネントは、ページのActivities部分を表示します。
 const Activities = () => {
   return (

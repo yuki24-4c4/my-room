@@ -2,11 +2,16 @@
   text-align: center;
 }
 
-#introduction, #finally {
-  position: relative;
+#top, #introduction, #finally {
   overflow: hidden;
-  width: 100%;
-  /* padding: 10rem 0; */
+  height: 100vh;
+  z-index: 1;
+}
+#activities, #skill {
+  position: relative;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  z-index: 1;
 }
 
 #introduction-content, #finally-content {
@@ -22,66 +27,7 @@
   width : 90%;
 }
 
-/* src/components/Background.css */
-.background {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* 背景として */
-  /* position: fixed;           /* 背景を画面に固定 */
-  /* top: 0; */
-  /* left: 0; */
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* z-index: -1;               背景が後ろに */
-  /* pointer-events: none;  */ 
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-clip-path: inset(0);
-  clip-path: inset(0);
-}
-
-.background ::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-#introduction-background, #activities-background {
-  height: 100vh;
-  z-index: -1; /* 背景として */
-}
-
-.bg-crescent-moon {
-  position: absolute;
-  width: 40vw;
-  max-width: 1000px;
-  opacity: 0.4;
-}
-
-.bg-crescent-moon.left {
-  bottom: -6vw;
-  left: -2vw;
-  transform: scaleX(-1);
-  pointer-events: none; /* 背景をクリックできなくする */
-}
-
-/* .bg-crescent-moon.right {
-  top: 0;
-  right: 0;
-} */
-
-
-
-
-.blog-card {
+.activities-card {
   position: relative;
   background: #F5EBDD;
   border-radius: 10px;
@@ -94,15 +40,15 @@
   border: #7C4B4B 4px solid;
 }
 
-.blog-card.right {
+.activities-card.right {
   transform: translateX(20%); /* 右にずらす */
 }
 
-.blog-card.left {
+.activities-card.left {
   transform: translateX(-20%); /* 左にずらす */
 }
 
-.blog-card-tab {
+.activities-card-tab {
   position: absolute;
   top: -18px;
   left: 30px;
@@ -112,13 +58,13 @@
   color: #744e3f;
 }
 
-.blog-card-content {
+.activities-card-content {
   display: flex;
   gap: 16px;
   margin : auto 0;
 }
 
-.blog-card-image img,
+.activities-card-image img,
 .image-placeholder {
   width: 150px;
   height: 150px;
@@ -127,14 +73,14 @@
   object-fit: cover;
 }
 
-.blog-card-text {
+.activities-card-text {
   flex: 1;
   color: #5c4a42;
   line-height: 1.6;
   margin-top: 4px;
 }
 
-.blog-card-button {
+.activities-card-button {
   position: absolute;
   bottom: -4px;
   right: -4px;
@@ -150,7 +96,7 @@
   transition: background 0.3s;
 }
 
-.blog-card-button:hover {
+.activities-card-button:hover {
   background: #5c3b2e;
 }
 
@@ -191,6 +137,7 @@
   position: absolute;
   top: -25px;
   left: 50%;
+  white-space: nowrap;
   max-width: 160px;
   text-align: center;
   transform: translateX(-50%);
@@ -206,7 +153,6 @@
   height: 64px;
   margin: 0 auto 12px auto;
   border-radius: 10px;
-  background-color: #ccc;
 }
 
 .skill-card-text {
@@ -241,4 +187,419 @@
   flex: 0 0 200px; /* 幅を固定 */
   max-width: 200px; /* 最大幅も固定 */
   box-sizing: border-box; /* パディングやボーダーを含めて計算 */
+}
+
+.skill-description {
+  margin: 20px auto; /* 上下の余白を設定し、中央揃え */
+  text-align: center; /* 全体を中央揃え */
+  font-size: 1rem; /* フォントサイズ */
+  line-height: 1.8; /* 行間を調整 */
+  max-width: 600px; /* 最大幅を設定して中央揃え */
+}
+
+.skill-description p {
+  display: flex; /* アイコンとテキストを横並びに */
+  align-items: center; /* アイコンとテキストを縦方向で中央揃え */
+  justify-content: center; /* 横方向で中央揃え */
+  margin-bottom: 10px; /* 各行の間隔を設定 */
+}
+
+.skill-icons {
+  display: flex; /* アイコンを横並びに */
+  margin-right: 10px; /* テキストとの間隔 */
+}
+
+.skill-icon {
+  width: 24px; /* アイコンの幅 */
+  height: 24px; /* アイコンの高さ */
+  margin-right: 10px; /* テキストとの間隔 */
+}
+
+.skill-icon.hidden {
+  visibility: hidden; /* 非表示にする */
+}
+
+.moon-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* 高い値に設定 */
+}
+
+.moon-image {
+  width: 96px; /* 月のサイズ */
+  height: 96px;
+  position: relative;
+  z-index: -1; /* 背景に配置 */
+
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh; /* 地面の高さ */
+    background-color: #D8A39D; /* 地面の色 */
+    z-index: 1; /* 背景に配置 */
+  }
+
+#top {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; /* 他のセクションに影響しないようにする */
+  background-color: #F5EBDD; /* 背景色を設定 */
+}
+
+#top .animated-element {
+  position: absolute;
+  animation: moveTopAnimation 5s infinite; /* アニメーションを適用 */
+}
+
+@keyframes moveTopAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* 全体のコンテナ */
+.title-appear-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end; /* 下部に配置 */
+  justify-content: center;
+  bottom: 2vh; /* 下からの距離 */
+  z-index: 20;
+}
+
+/* テキスト全体のスタイル */
+.title-appear-text {
+  display: flex; /* 横並びにする */
+  gap: 8px; /* 各文字の間隔 */
+}
+
+/* 各文字のスタイル */
+.title-appear-char {
+    color: #F5EBDD; /* ピンク色 */
+    opacity: 0;
+  transform: translateY(20px) scale(0.5);
+  animation: titleAppear 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 各文字のアニメーション */
+.title-appear-char:nth-child(1) { animation-delay: 0.5s; }
+.title-appear-char:nth-child(2) { animation-delay: 0.8s; }
+.title-appear-char:nth-child(3) { animation-delay: 1.1s; }
+.title-appear-char:nth-child(4) { animation-delay: 1.4s; }
+.title-appear-char:nth-child(5) { animation-delay: 1.7s; }
+
+/* アニメーションの定義 */
+@keyframes titleAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 非表示時のスタイル */
+.title-appear-container.hidden {
+  opacity: 1; /* 消えないようにする */
+}
+
+/* 雪の結晶のコンテナ */
+.snowfall-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 雪の結晶の基本スタイル */
+.snowflake {
+  position: absolute;
+  top: -10%; /* 画面の上から降り始める */
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 雪の結晶が降るアニメーション */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
+}
+
+/* 時計回りの回転 */
+.rotate-clockwise {
+  animation-name: fall, rotateClockwise;
+  animation-timing-function: linear, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 反時計回りの回転 */
+.rotate-counterclockwise {
+  animation-name: fall, rotateCounterclockwise;
+  animation-timing-function: linear, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes rotateCounterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F5EBDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2s forwards; /* 自動で消える */
+}
+
+.snowflake {
+  font-size: 48px;
+  animation: spin 2s linear infinite;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #7C4B4B;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.6s ease;
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #7C4B4B, #F5EBDD); /* Introduction の背景色に合わせる */
+  color: #7C4B4B; /* テキストの色を Introduction に合わせる */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Kiwi Maru', serif; /* フォントを統一 */
+  letter-spacing: 0.1em; /* 文字間隔を少し広げる */
+  opacity: 1; /* 初期状態の不透明度 */
+  transition: opacity 1s ease-in-out; /* フェードアウトのトランジション */
+  z-index: 1000; /* 他の要素の上に表示 */
+}
+
+#loading.fade-out {
+  opacity: 0; /* フェードアウト時の不透明度 */
+}
+
+.loading-text {
+  text-align: center;
+  animation: fadeInOut 2s infinite; /* 点滅アニメーション */
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.scroll-indicator {
+  margin-top: 1rem; /* 文字の下に余白を追加 */
+  text-align: center;
+  visibility: hidden; /* 初期状態で非表示 */
+  opacity: 0; /* 初期状態で透明 */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* スムーズな表示切り替え */
+}
+
+.scroll-indicator.visible {
+  visibility: visible; /* 矢印を表示 */
+  opacity: 1; /* 矢印を不透明に */
+}
+
+.scroll-indicator .arrow {
+  width: 20px; /* 矢印の幅 */
+  height: auto; /* 縦横比を維持 */
+  animation: float 2s infinite; /* ぷかぷかアニメーション */
+  display: inline-block;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* 初期位置 */
+  }
+  50% {
+    transform: translateY(8px); /* 下に移動 */
+  }
+}
+
+#introduction-background, #activities-background, #skill-background, #finally-background {
+  position: relative; /* 親要素を基準にする */
+  width: 100%; /* 親要素の幅を設定 */
+  height: 100%; /* 親要素の高さを設定 */
+}
+
+.bg-crescent-moon {
+  position: absolute;
+  bottom: -10px; /* 下端に配置 */
+  left: -10px; /* 左端に配置 */
+  width: 500px; /* 三日月の幅を指定 */
+  height: auto; /* 縦横比を維持 */
+  z-index: 100; /* 背景に配置 */
+  transform: scaleX(-1); /* 左右反転 */
+}
+
+/* 背景レイヤーの基本スタイル */
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* 初期状態は非表示 */
+  transition: opacity 0.5s ease-in-out; /* スムーズな切り替え */
+  pointer-events: none; /* 非表示の背景がクリックを妨げないようにする */
+  z-index: -1; /* 背景として配置 */
+}
+
+/* 表示状態の背景 */
+.background-layer.visible {
+  opacity: 1; /* 表示 */
+  pointer-events: auto; /* 表示中はイベントを受け付ける */
+}
+
+/* 非表示状態の背景 */
+.background-layer.hidden {
+  opacity: 0; /* 非表示 */
+}
+
+.paw-icon {
+  width: 20px; /* 現在のアイコンの幅に合わせる */
+  height: 20px; /* 縦横比を維持 */
+  display: inline-block;
+  margin-right: 4px; /* アイコン間の余白 */
+}
+
+#finally {
+  margin-bottom : 0;
+}
+
+#footer {
+  padding: 20px;
+  background-color: #7C4B4B; /* フッターの背景色 */
+  color: #F5EBDD; /* テキストの色 */
+  text-align: center;
+}
+
+#icons {
+  display: flex; /* 横並びに配置 */
+  justify-content: center; /* 中央揃え */
+  gap: 20px; /* アイコン間の余白 */
+  margin-bottom: 10px;
+}
+
+.footer-icon {
+  width: 32px; /* アイコンの幅 */
+  height: 32px; /* アイコンの高さ */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.footer-icon:hover {
+  transform: scale(1.2); /* ホバー時に拡大 */
+  opacity: 0.8; /* ホバー時に少し透明に */
+}
+
+.footer-content p {
+  text-align : center; /* テキストを中央揃え */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #7C4B4B; /* ヘッダーの背景色 */
+  color: #F5EBDD; /* テキストの色 */
+  text-align: right; /* 文字を右寄りに配置 */
+  padding: 10px 20px; /* 上下と左右の余白を設定 */
+  z-index: 1000; /* ヘッダーを最前面に表示 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ヘッダーの影 */
+}
+
+.header-nav {
+  display: inline-flex; /* 横並びに配置 */
+  justify-content: flex-end; /* 右寄せ */
+  align-items: center;
+  gap: 15px; /* 各リンク間の余白 */
+  font-size: 1rem;
+  margin-right: 100px;}
+
+.header-nav a {
+  color: #f5ebdd; /* リンクの色 */
+  text-decoration: none; /* 下線を削除 */
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: #ffe4b5; /* ホバー時の色 */
+}
+
+.header-nav span {
+  color: #f5ebdd; /* 区切り線の色 */
 }
