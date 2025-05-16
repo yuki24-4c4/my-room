@@ -1,6 +1,5 @@
 import gear from '../../assets/gear.svg';
 
-import React from 'react';
 
 const SkillBackGround = () => {
   return (

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import WalkingCat from './WalkingCat';
 import Moon from './Moon';
-import SceneryGenerator from './SceneryGenerator';
 import TitleAppear from './TitleAppear';
 import SnowFall from './SnowFall';
 

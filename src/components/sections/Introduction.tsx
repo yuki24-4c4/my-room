@@ -1,6 +1,5 @@
 // components/sections/Introduction.tsx
 
-import IntroductionBackGround from "../back/IntroductionBack"
 
 // Introductionコンポーネントは、ページのIntroduction部分を表示します。
 const Introduction = () => {

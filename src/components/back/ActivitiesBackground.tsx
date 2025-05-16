@@ -1,6 +1,5 @@
 import snow from '../../assets/snow.svg';
 
-import React from 'react';
 
 const ActivitiesBackGround = () => {
   return (

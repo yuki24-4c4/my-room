@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TopScene from '../animation/TopScene';
 
 function Top() {

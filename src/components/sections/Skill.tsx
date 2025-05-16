@@ -2,9 +2,22 @@
 
 import SkillCard from '../card/SkillCard';
 import catHand from '../../assets/cat-hand.svg';
-import { image } from 'framer-motion/client';
 
-const skillCategories = [
+// スキルアイテムの型を定義
+type SkillItem = {
+  title: string;
+  description: string;
+  level: number;
+  image?: string; // imageをオプションプロパティにする
+};
+
+// スキルカテゴリの型を定義
+type SkillCategory = {
+  category: string;
+  items: SkillItem[];
+};
+
+const skillCategories: SkillCategory[] = [
   {
     category: '資格',
     items: [

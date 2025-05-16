@@ -1,6 +1,6 @@
 // pages/Home.tsx
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Top, Introduction, Activities, Skill, Finally } from "../components/sections";
 import BackgroundController from "../components/back/BackgroundController";
 import Loading from "../components/layout/Loading"; // Loading コンポーネントをインポーネート
