@@ -196,7 +196,7 @@
   text-align: left; /* 全体を中央揃え */
   font-size: 1rem; /* フォントサイズ */
   line-height: 1.8; /* 行間を調整 */
-  max-width: 700px; /* 最大幅を設定して中央揃え */
+  max-width: 750px; /* 最大幅を設定して中央揃え */
 }
 
 .skill-description p {
