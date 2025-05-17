@@ -7,12 +7,13 @@ type SkillCardProps = {
   description: string;
   image?: string;
   level: number;
+  category?: string; // カテゴリを受け取れるようにする
 };
 
-const SkillCard: React.FC<SkillCardProps> = ({ title, description, image, level }) => {
+const SkillCard: React.FC<SkillCardProps> = ({ title, description, image, level, category }) => {
   return (
     <div className="skill-card">
-      <p className="skill-card-tab">
+      <p className={`skill-card-title${category === '資格' ? ' skill-card-title--shikaku' : ''}`}>
         {title.split('\n').map((line, index) => (
           <React.Fragment key={index}>
             {line}
@@ -21,14 +22,21 @@ const SkillCard: React.FC<SkillCardProps> = ({ title, description, image, level 
         ))}
       </p>
       <div className="skill-card-content">
-        <img
-          src={image || gearIcon} 
-          alt={title}
-          className="skill-card-image"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = gearIcon; // 読み込みエラー時にデフォルト画像を表示
-          }}
-        />
+        {/* 画像 or ダミー空白で高さを揃える */}
+        {category !== '資格' && image && (
+          <img
+            src={image}
+            alt={title}
+            className="skill-card-image"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = gearIcon;
+            }}
+          />
+        )}
+        {/* 画像がない場合や資格カテゴリの場合は空白 */}
+        {(category === '資格' || !image) && (
+          <div style={{ height: 64, marginBottom: 12 }} />
+        )}
         <div className="skill-level">
           {Array.from({ length: level }, (_, i) => (
             <img

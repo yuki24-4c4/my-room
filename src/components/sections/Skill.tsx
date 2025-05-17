@@ -24,22 +24,22 @@ const skillCategories: SkillCategory[] = [
       {
         title: 'ITパスポート',
         description: 'ITの基礎知識とビジネススキルを身につけていることを証明する国家資格です。',
-        level: 0,
+        level: 1,
       },
       {
         title: '情報セキュリティ\nマネジメント',
         description: '情報セキュリティに関するリスク管理や対策能力を証明する国家資格です。',
-        level: 0,
+        level: 1,
       },
       {
-        title: '基本情報\n技術者試験',
+        title: '基本情報技術者試験',
         description: 'プログラミングやネットワークなど、IT技術者としての基礎力を証明する国家資格です。',
-        level: 0,
+        level: 2,
       },
       {
         title: 'PowerPoint\nAssociate',
         description: 'PowerPointを活用した資料作成・プレゼンテーション能力を証明する国際資格です。',
-        level: 0,
+        level: 1,
       },
     ],
   },
@@ -48,32 +48,32 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'HTML',
-        description: '簡単なコーディングや調整ができる。',
+        description: '基本的なタグを使って、色々作ったりしてます。',
         level: 2,
         image: './skill_icon/html5.svg',
       },
       {
         title: 'CSS',
-        description: '簡単なコーディングや調整ができる。',
+        description: 'やりたいデザインを実装するために調べながら色々作ったりしてます。',
         level: 2,
         image: './skill_icon/css3.svg',
       },
       {
         title: 'JavaScript',
-        description: '基本的な動的処理を実装できる。',
+        description: '構文の書き方で混乱するが、調べながらだったらある程度実装できます。',
         level: 2,
         image: './skill_icon/javascript.svg',
       },
       {
         title: 'TypeScript',
-        description: '基本的な動的処理を実装できる。',
+        description: '最初、初めての静的型付け言語でエラーがいっぱい出て混乱してました。',
         level: 2,
         image: './skill_icon/typescript.svg',
       },
       {
         title: 'Swift',
-        description: '簡単なアプリを作成できる。',
-        level: 2,
+        description: '参考書に載っているサンプルコードは出来ます。',
+        level: 1,
         image: './skill_icon/swift.svg',
       },
     ],
@@ -83,14 +83,14 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'PHP',
-        description: '簡単なAPIを作成できる。',
-        level: 2,
+        description: '授業で少しだけ触ったことがある。今後使う予定があるので、勉強中。',
+        level: 1,
         image: './skill_icon/php.svg',
       },
       {
         title: 'Python',
-        description: '簡単なAPIを作成できる。',
-        level: 2,
+        description: '初めて触った言語です。コンソールで使えるアプリを作ったりしました。',
+        level: 3,
         image: './skill_icon/python.svg',
       },
     ],
@@ -100,25 +100,25 @@ const skillCategories: SkillCategory[] = [
   items: [
     {
       title: 'React',
-      description: '簡単なアプリを作成できる。',
+      description: 'このサイトを作成するために勉強しました。',
       level: 2,
       image: './skill_icon/react.svg',
     },
     {
       title: 'Flask',
-      description: '簡単なAPIを作成できる。',
+      description: 'ちょっとしたアプリを作成したことがあります。',
       level: 2,
       image: './skill_icon/flask.svg',
     },
     {
       title: 'FastAPI',
-      description: '簡単なAPIを作成できる。',
+      description: '授業で簡単なAPIを作成したことがあります。',
       level: 2,
       image: './skill_icon/fastapi.svg',
     },
     {
       title: 'Node.js',
-      description: '簡単なAPIを作成できる。',
+      description: '学校の授業で簡単なアプリを作成したことがあります。',
       level: 2,
       image: './skill_icon/nodejs.svg',
     },
@@ -129,14 +129,14 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'MySQL',
-        description: '簡単なデータベースを作成できる。',
+        description: 'Pythonと連携して、日記アプリを作成したことがあります。',
         level: 2,
         image: './skill_icon/mysql.svg',
       },
       {
         title: 'SQLite',
-        description: '簡単なデータベースを作成できる。',
-        level: 2,
+        description: '授業でちょっと触ったっことがある程度です。',
+        level: 1,
         image: './skill_icon/sqlite.svg',
       }
     ],
@@ -146,8 +146,8 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'AWS',
-        description: '簡単な操作ができる。',
-        level: 2,
+        description: '授業で満なんだ程度です。もっと理解が深まるように勉強中。',
+        level: 1,
         image: './skill_icon/aws.svg', 
   },
 ],
@@ -157,8 +157,8 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'Docker',
-        description: '簡単な操作ができる。',
-        level: 2,
+        description: '知識だけで、実際に触ったことはありません。知識もあまりない。',
+        level: 1,
         image: './skill_icon/docker.svg',
       },
       
@@ -169,20 +169,20 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'Windows',
-        description: '簡単な操作ができる。',
+        description: '主に趣味でゲームをするのに使ってます。',
         level: 2,
         image: './skill_icon/windows.svg',
       },
       {
         title: 'MacOS',
-        description: '簡単な操作ができる。',
+        description: '普段の開発環境として使用しています。',
         level: 2,
         image: './skill_icon/macos.svg',
       },
       {
         title: 'Linux',
-        description: '簡単な操作ができる。',
-        level: 2,
+        description: '授業で学びました。LinuCレベル1の取得に向けて勉強中。',
+        level: 1,
         image: './skill_icon/linux.svg',
       },
     ],
@@ -191,22 +191,52 @@ const skillCategories: SkillCategory[] = [
     category: 'ツール',
     items: [
       {
+        title: 'Discord',
+        description: 'チームでのプロジェクトでよく使用してます。管理の仕方を勉強中。',
+        level: 2,
+        image: './skill_icon/discord.svg',
+      },
+      {
         title: 'Git',
-        description: '簡単な操作ができる。',
+        description: '主にGitHubを使用しています。GitLabでの開発経験もあります。',
         level: 2,
         image: './skill_icon/git.svg',
       },
       {
         title: 'VSCode',
-        description: '簡単な操作ができる。',
-        level: 2,
+        description: '拡張機能を使ってペットを飼うことで、モチベを上げています。可愛い。',
+        level: 3,
         image: './skill_icon/vscode.svg',
       },
       {
         title: 'Figma',
-        description: '簡単な操作ができる。',
-        level: 2,
+        description: 'モックアップ作成などで使います。デザインもできるようになりたい。',
+        level: 3,
         image: './skill_icon/figma.svg',
+      },
+      {
+        title: 'Illustrator',
+        description: '授業で少しだけ学びました。',
+        level: 1,
+        image: './skill_icon/illustrator.svg',
+      },
+      {
+        title: 'Photoshop',
+        description: '体験授業で教えたりしてます。作品作るのが好きです。',
+        level: 2,
+        image: './skill_icon/photoshop.svg',
+      },
+      {
+        title: 'Premiere Pro',
+        description: '体験授業で教えているたりしてます。動画編集の経験があります。',
+        level: 2,
+        image: './skill_icon/premierepro.svg',
+      },
+      {
+        title: 'After Effects',
+        description: '体験授業で教えたりしてます。アニメーションに興味があります。',
+        level: 2,
+        image: './skill_icon/aftereffects.svg',
       },
     ],
   },
@@ -224,18 +254,17 @@ const Skill = () => {
       {/* スキル説明 */}
       <div className="skill-description">
         <p>
-            <img src={catHand} alt="cat hand" className="skill-icon" />
-            
-          は、スキルの習熟度を表しています。
+          <img src={catHand} alt="cat hand" className="skill-icon" />
+          の数は、スキルの習熟度や資格の難易度（※私が感じた基準です）を表しています。
         </p>
         <p>
-          １つは、触ってみて基本的なことはできるようになった段階。
+          1つ：少し触ったことがある、または基本的な知識があるレベルです。
         </p>
         <p>
-          ２つは、小さな制作や課題などで使ったことがあるレベルです。
+          2つ：課題や小さな制作で使ったことがあり、調べながら実装できるレベルです。
         </p>
         <p>
-          ３つは、複数の制作経験があり、人に説明できるレベルです。
+          3つ：何度も使っていて、調べなくても使いこなせる・人に教えられるレベルです。
         </p>
       </div>
 
@@ -249,7 +278,8 @@ const Skill = () => {
                 title={skill.title}
                 description={skill.description}
                 level={skill.level}
-                image={skill.image} // imageプロパティを渡す
+                image={skill.image}
+                category={category.category}
               />
             ))}
           </div>

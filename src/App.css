@@ -133,18 +133,20 @@
   border: #7C4B4B 4px solid;
 }
 
-.skill-card-tab {
+.skill-card-title {
   position: absolute;
-  top: -25px;
+  top: 4px;
   left: 50%;
   white-space: nowrap;
-  max-width: 160px;
   text-align: center;
   transform: translateX(-50%);
-  background: #F5EBDD;
   padding: 0 8px;
   border-radius: 8px 8px 0 0;
   color: #5C4B4B;
+}
+
+.skill-card-title--shikaku {
+  top: 20px; /* お好みで調整 */
 }
 
 .skill-card-image,
@@ -191,16 +193,16 @@
 
 .skill-description {
   margin: 20px auto; /* 上下の余白を設定し、中央揃え */
-  text-align: center; /* 全体を中央揃え */
+  text-align: left; /* 全体を中央揃え */
   font-size: 1rem; /* フォントサイズ */
   line-height: 1.8; /* 行間を調整 */
-  max-width: 600px; /* 最大幅を設定して中央揃え */
+  max-width: 700px; /* 最大幅を設定して中央揃え */
 }
 
 .skill-description p {
   display: flex; /* アイコンとテキストを横並びに */
-  align-items: center; /* アイコンとテキストを縦方向で中央揃え */
-  justify-content: center; /* 横方向で中央揃え */
+  align-items: left; /* アイコンとテキストを縦方向で中央揃え */
+  justify-content: left; /* 横方向で中央揃え */
   margin-bottom: 10px; /* 各行の間隔を設定 */
 }
 
@@ -534,7 +536,7 @@
   width: 20px; /* 現在のアイコンの幅に合わせる */
   height: 20px; /* 縦横比を維持 */
   display: inline-block;
-  margin-right: 4px; /* アイコン間の余白 */
+  margin: 0 10px; /* アイコン間の余白 */
 }
 
 #finally {
