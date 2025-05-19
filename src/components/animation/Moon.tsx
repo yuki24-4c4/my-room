@@ -13,7 +13,6 @@ const Moon: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   // 最初の一周が完了したかどうか
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     let animationFrameId: number; // アニメーションフレームID
@@ -36,7 +35,7 @@ const Moon: React.FC = () => {
         currentPhaseIndex = (currentPhaseIndex + 1) % moonPhases.length; // 次のフェーズに移動
         setCurrentMoon(moonPhases[currentPhaseIndex]); // 月の画像を更新
         startTime = currentTime; // 時間をリセット
-        setIsVisible(true); // 月を表示
+        
       }
 
       // 軌道上の位置を計算
@@ -76,7 +75,6 @@ const Moon: React.FC = () => {
 
   // 月を描画
   return (
-    isVisible && ( // 最初の一周が完了するまで非表示
       <div
         className="moon-container"
         style={{
@@ -86,7 +84,6 @@ const Moon: React.FC = () => {
       >
         <img src={currentMoon} alt="Moon Phase" className="moon-image" />
       </div>
-    )
   );
 };
 

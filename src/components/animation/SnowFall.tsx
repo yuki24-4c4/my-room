@@ -20,28 +20,32 @@ const createSnowflake = (id: number): Snowflake => ({
 
 const Snowfall: React.FC = () => {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
-  const maxSnowflakes = 25; // 最大雪の結晶数
+  const maxSnowflakes = 40; // 最大雪の結晶数
 
   useEffect(() => {
     let animationFrameId: number;
+    const intervalId = setInterval(() => {
+      setSnowflakes((prev) => {
+        if (prev.length < maxSnowflakes) {
+          return [...prev, createSnowflake(Date.now())];
+        }
+        return prev;
+      });
+    }, 200);
 
     const updateSnowflakes = () => {
-      setSnowflakes((prev) => {
-        // 雪の結晶が画面外に出たら削除
-        const updated = prev.filter((flake) => flake.left >= -10 && flake.left <= 110);
-        // 雪の結晶の数が最大を超えないように追加
-        if (updated.length < maxSnowflakes) {
-          return [...updated, createSnowflake(Date.now())];
-        }
-        return updated;
-      });
-
+      setSnowflakes((prev) =>
+        prev.filter((flake) => flake.left >= -10 && flake.left <= 110)
+      );
       animationFrameId = requestAnimationFrame(updateSnowflakes);
     };
 
     animationFrameId = requestAnimationFrame(updateSnowflakes);
 
-    return () => cancelAnimationFrame(animationFrameId);
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      clearInterval(intervalId);
+    };
   }, []);
 
   return (

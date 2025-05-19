@@ -14,7 +14,7 @@ const TopScene: React.FC<TopSceneProps> = ({ onAnimationComplete }) => {
     // 読み込みから指定秒数後に TitleAppear を表示
     const timer = setTimeout(() => {
       setTitleVisible(true);
-    }, 9000); // 3秒後に表示
+    }, 2000); // 3秒後に表示
 
     return () => clearTimeout(timer); // クリーンアップ
   }, []);

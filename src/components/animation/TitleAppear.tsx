@@ -14,7 +14,7 @@ const TitleAppear: React.FC<TitleAppearProps> = ({ onAnimationComplete }) => {
     const timer = setTimeout(() => {
       setIsAnimating(false);
       onAnimationComplete();
-    }, title.length * 400 + 1000); // 各文字のアニメーション時間 + 余裕時間
+    }, title.length * 400 + 500); // 各文字のアニメーション時間 + 余裕時間
 
     return () => clearTimeout(timer);
   }, [onAnimationComplete, title.length]);
