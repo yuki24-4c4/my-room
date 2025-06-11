@@ -69,7 +69,6 @@
   width: 150px;
   height: 150px;
   border-radius: 10px;
-  background: #ccc;
   object-fit: cover;
 }
 
@@ -582,15 +581,25 @@
   padding: 10px 20px; /* 上下と左右の余白を設定 */
   z-index: 1000; /* ヘッダーを最前面に表示 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ヘッダーの影 */
+  display: flex;
+  align-items: center;      /* 高さを揃える */
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;             /* ナビゲーションと同じ高さに調整 */
+  background: #7C4B4B;         /* 必要に応じて背景色 */
+}
+
+.header img {
+  height: 60px;             /* ナビゲーションとバランスが良い高さに調整 */
+  
 }
 
 .header-nav {
-  display: inline-flex; /* 横並びに配置 */
-  justify-content: flex-end; /* 右寄せ */
+  display: flex;
   align-items: center;
-  gap: 15px; /* 各リンク間の余白 */
-  font-size: 1rem;
-  margin-right: 100px;}
+  gap: 16px;
+  height: 100%;             /* 親の高さに合わせる */
+}
 
 .header-nav a {
   color: #f5ebdd; /* リンクの色 */

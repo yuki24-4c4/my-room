@@ -1,4 +1,5 @@
 // components/layout/Header.tsx
+import logo from "../../assets/logo_white.svg"; // ロゴ画像のパスを修正
 
 import React, { useEffect, useState } from "react";
 
@@ -36,6 +37,7 @@ const Header = () => {
 
   return (
     <header className="header">
+      <img src={logo} alt="ロゴ" />
       <nav className="header-nav">
         <a href="#top" onClick={(e) => handleSmoothScroll(e, "top")}>トップ</a>
         <span>|</span>

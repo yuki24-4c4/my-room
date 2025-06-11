@@ -146,7 +146,7 @@ const skillCategories: SkillCategory[] = [
     items: [
       {
         title: 'AWS',
-        description: '授業で満なんだ程度です。もっと理解が深まるように勉強中。',
+        description: '授業で学んだ程度です。もっと理解が深まるように勉強中。',
         level: 1,
         image: './skill_icon/aws.svg', 
   },

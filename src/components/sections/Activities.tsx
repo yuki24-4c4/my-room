@@ -1,6 +1,7 @@
 // components/sections/Introduction.tsx
 
 import BlogCard from '../card/ActivitiesCard';
+import logo from '../../../public/logo.svg'; // ロゴ画像のパスを修正
 
 type BlogItem = {
   title: string;
@@ -15,8 +16,8 @@ const blogList: BlogItem[] = [
     title: 'yukiのへや',
     description:
       'ポートフォリオサイトです。私のスキルや活動、これまでに作ったサービスを紹介しています。',
-
-    link: '/blog',
+    image: logo,
+    link: '#top',
     linkTitle: 'サイトに行く',
   },
   
