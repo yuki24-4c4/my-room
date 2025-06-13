@@ -1,51 +1,43 @@
 // components/BackgroundController.tsx
+import React, { useState, useEffect } from "react";
 import { useVisibleSection } from "../../lib/hooks/useVisibleSection";
 import IntroductionBack from "./IntroductionBack";
 import ActivitiesBackground from "./ActivitiesBackground";
 import SkillBackground from "./SkillBackground";
 import FinallyBackground from "./FinallyBackground";
 
-const BackgroundController = () => {
-  const activeSection = useVisibleSection([
-    "introduction",
-    "activities",
-    "skill",
-    "finally",
-  ]);
+const BackgroundController: React.FC = () => {
+  const sectionIds = ["introduction", "activities", "skill", "finally"];
+  const activeSection = useVisibleSection(sectionIds);
+  const [currentBackground, setCurrentBackground] = useState<React.ReactNode>(null);
+  const [fadeClass, setFadeClass] = useState<string>("fade-in");
 
-  return (
-    <div className="background-controller">
-      {/* 各背景コンポーネントを常にレンダリングし、表示・非表示を切り替える */}
-      <div
-        className={`background-layer ${
-          activeSection === "introduction" ? "visible" : "hidden"
-        }`}
-      >
-        <IntroductionBack />
-      </div>
-      <div
-        className={`background-layer ${
-          activeSection === "activities" ? "visible" : "hidden"
-        }`}
-      >
-        <ActivitiesBackground />
-      </div>
-      <div
-        className={`background-layer ${
-          activeSection === "skill" ? "visible" : "hidden"
-        }`}
-      >
-        <SkillBackground />
-      </div>
-      <div
-        className={`background-layer ${
-          activeSection === "finally" ? "visible" : "hidden"
-        }`}
-      >
-        <FinallyBackground />
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    setFadeClass("fade-out");
+    const timeout = setTimeout(() => {
+      switch (activeSection) {
+        case "introduction":
+          setCurrentBackground(<IntroductionBack />);
+          break;
+        case "activities":
+          setCurrentBackground(<ActivitiesBackground />);
+          break;
+        case "skill":
+          setCurrentBackground(<SkillBackground />);
+          break;
+        case "finally":
+          setCurrentBackground(<FinallyBackground />);
+          break;
+        default:
+          setCurrentBackground(null);
+      }
+      setFadeClass("fade-in");
+    }, 300); // フェードアウト後に背景を切り替え
+
+    return () => clearTimeout(timeout);
+  }, [activeSection]);
+
+  return <div className={`background-container ${fadeClass}`}>{currentBackground}</div>;
 };
 
 export default BackgroundController;

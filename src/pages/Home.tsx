@@ -9,7 +9,6 @@ import Footer from "../components/layout/Footer"; // フッターコンポーネ
 const Home = () => {
   return (
     <div style={{ position: "relative" }}>
-      {/* {isLoading && <Loading fadeOut={fadeOut} />} Loading コンポーネントを使用 */}
       <BackgroundController />
       <Top />
       <Header /> {/* ヘッダーを最初に配置 */}
